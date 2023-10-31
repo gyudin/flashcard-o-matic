@@ -1,0 +1,86 @@
+/* .answer {
+    filter: blur(3px);
+    transition: filter 0.3s;
+  }
+  
+  .answer:hover {
+    filter: blur(0);
+  }
+
+ .card-text {
+    max-width: 300px;
+}
+*/
+
+.card {
+  min-height: 150px;
+  margin-bottom: 20px;
+}
+
+.bg-orange-1 {
+  background-image: url("./images/bg_bg_orange.gif");
+  background-position: center;
+  background-repeat: repeat;
+  height: 200px; /* Or the height you want for your header */
+}
+
+.grey-background {
+  background-color: grey;
+}
+
+.delete-prompt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-prompt {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+}
+
+.delete-prompt-content {
+  text-align: center;
+}
+
+.delete-prompt-actions {
+  margin-top: 20px;
+}
+
+.delete-prompt-actions button {
+  margin: 0 10px;
+}
+
+.prompt-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; 
+  }
+  
+  .prompt {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 500px; 
+    margin: 0 auto; 
+    z-index: 1001; 
+  }
+  
