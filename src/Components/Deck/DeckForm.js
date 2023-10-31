@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory, Link } from "react-router-dom";
 import { createDeck, readDeck, updateDeck } from "../../utils/api";
-import Breadcrumb from '../Shared/BreadCrumbs';
+import Breadcrumb from "../Shared/BreadCrumbs";
 
-function DeckForm({mode}) {
+function DeckForm({ mode }) {
   const [deck, setDeck] = useState({ name: "", description: "" });
   const { deckId } = useParams();
   const history = useHistory();
   const crumbs = [
-    { name: 'Home', link: '/' },
-    { name: mode === 'create' ? 'Create Deck' : deck.name },
+    { name: "Home", link: "/" },
+    { name: mode === "create" ? "Create Deck" : deck.name },
   ];
 
   useEffect(() => {
@@ -66,13 +66,15 @@ function DeckForm({mode}) {
   };
 
   return (
-    <>  
-        <Breadcrumb crumbs={crumbs} />
-        <h1>{mode === 'create' ? 'Create Deck' : 'Edit Deck'}</h1>
-        <form onSubmit={handleSubmit} className="col-sm-12">
+    <>
+      <Breadcrumb crumbs={crumbs} />
+      <h1>{mode === "create" ? "Create Deck" : "Edit Deck"}</h1>
+      <form onSubmit={handleSubmit} className="col-sm-12">
         <div className="mb-3">
-            <label htmlFor="name" className="form-label">Name</label>
-            <input
+          <label htmlFor="name" className="form-label">
+            Name
+          </label>
+          <input
             type="text"
             id="name"
             name="name"
@@ -81,11 +83,13 @@ function DeckForm({mode}) {
             required
             value={deck.name}
             onChange={handleChange}
-            />
+          />
         </div>
         <div className="mb-3">
-            <label htmlFor="description" className="form-label">Description</label>
-            <textarea
+          <label htmlFor="description" className="form-label">
+            Description
+          </label>
+          <textarea
             id="description"
             name="description"
             className="form-control"
@@ -94,11 +98,18 @@ function DeckForm({mode}) {
             required
             value={deck.description}
             onChange={handleChange}
-            ></textarea>
+          ></textarea>
         </div>
-        <Link to={deckId ? `/decks/${deckId}` : "/"} className="btn btn-secondary mr-2">Cancel</Link>
-        <button type="submit" className="btn btn-primary">Save</button>
-        </form>
+        <Link
+          to={deckId ? `/decks/${deckId}` : "/"}
+          className="btn btn-secondary mr-2"
+        >
+          Cancel
+        </Link>
+        <button type="submit" className="btn btn-primary">
+          Save
+        </button>
+      </form>
     </>
   );
 }
