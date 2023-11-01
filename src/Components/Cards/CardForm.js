@@ -42,9 +42,13 @@ function CardForm({ mode }) {
     event.preventDefault();
     if (mode === "create") {
       await createCard(deckId, card);
+      setCard({ front: "", back: "" }); 
     } else {
       await updateCard({ ...card, id: cardId });
     }
+  };
+
+  const handleDone = () => {
     history.push(`/decks/${deckId}`);
   };
 
@@ -83,8 +87,11 @@ function CardForm({ mode }) {
             required
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary mr-2">
           Save
+        </button>
+        <button type="button" className="btn btn-secondary" onClick={handleDone}>
+          Done
         </button>
       </form>
     </div>
